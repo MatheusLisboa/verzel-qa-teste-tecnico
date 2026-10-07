@@ -1,0 +1,176 @@
+### frete gratis 210 + cupom -> 189 (CA08)
+{"itens":[{"produtoId":"P004","nome":"Boné Aba Curva","precoUnitario":49.9,"quantidade":1,"total":49.9},{"produtoId":"P002","nome":"Calça Jeans Slim","precoUnitario":139.9,"quantidade":1,"total":139.9},{"produtoId":"P006","nome":"Kit 3 Pares de Meias","precoUnitario":29.9,"quantidade":1,"total":29.9}],"subtotal":219.7,"desconto":21.97,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":197.73,"cupom":{"codigo":"BEMVINDO10","aplicado":true,"mensagem":"Cupom aplicado: 10% de desconto nos produtos."}}
+[HTTP 200]
+
+### subtotal 219.8? 200.01-like: 189.9+29.9 sem cupom 219.8
+{"itens":[{"produtoId":"P003","nome":"Tênis Casual Urbano","precoUnitario":189.9,"quantidade":1,"total":189.9},{"produtoId":"P006","nome":"Kit 3 Pares de Meias","precoUnitario":29.9,"quantidade":1,"total":29.9}],"subtotal":219.8,"desconto":21.98,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":197.82,"cupom":{"codigo":"BEMVINDO10","aplicado":true,"mensagem":"Cupom aplicado: 10% de desconto nos produtos."}}
+[HTTP 200]
+
+### subtotal 229.9 + cupom
+{"itens":[{"produtoId":"P007","nome":"Jaqueta Corta-Vento","precoUnitario":229.9,"quantidade":1,"total":229.9}],"subtotal":229.9,"desconto":22.99,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":206.91,"cupom":{"codigo":"BEMVINDO10","aplicado":true,"mensagem":"Cupom aplicado: 10% de desconto nos produtos."}}
+[HTTP 200]
+
+### arredondamento 59.9x3
+{"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":3,"total":179.7}],"subtotal":179.7,"desconto":17.97,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":20.3,"total":181.63,"cupom":{"codigo":"BEMVINDO10","aplicado":true,"mensagem":"Cupom aplicado: 10% de desconto nos produtos."}}
+[HTTP 200]
+
+### arredondamento 29.9x3 (89.7)
+{"itens":[{"produtoId":"P006","nome":"Kit 3 Pares de Meias","precoUnitario":29.9,"quantidade":3,"total":89.7}],"subtotal":89.7,"desconto":8.97,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":110.3,"total":100.63,"cupom":{"codigo":"BEMVINDO10","aplicado":true,"mensagem":"Cupom aplicado: 10% de desconto nos produtos."}}
+[HTTP 200]
+
+### 139.9+49.9+29.9=219.7 cupom
+{"itens":[{"produtoId":"P002","nome":"Calça Jeans Slim","precoUnitario":139.9,"quantidade":1,"total":139.9},{"produtoId":"P004","nome":"Boné Aba Curva","precoUnitario":49.9,"quantidade":1,"total":49.9},{"produtoId":"P006","nome":"Kit 3 Pares de Meias","precoUnitario":29.9,"quantidade":1,"total":29.9}],"subtotal":219.7,"desconto":21.97,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":197.73,"cupom":{"codigo":"BEMVINDO10","aplicado":true,"mensagem":"Cupom aplicado: 10% de desconto nos produtos."}}
+[HTTP 200]
+
+### 199.9 (P001+P002) sem cupom
+{"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":1,"total":59.9},{"produtoId":"P002","nome":"Calça Jeans Slim","precoUnitario":139.9,"quantidade":1,"total":139.9}],"subtotal":199.8,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":0.2,"total":219.7,"cupom":null}
+[HTTP 200]
+
+### pedido ok
+{"numero":"VZ-419425","criadoEm":"2026-10-06T21:38:39.897Z","cliente":{"nome":"Maria Silva","email":"maria@exemplo.com","cep":"01310100"},"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":1,"total":100}],"subtotal":100,"desconto":10,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":100,"total":109.9,"cupom":{"codigo":"BEMVINDO10","aplicado":true,"mensagem":"Cupom aplicado: 10% de desconto nos produtos."}}
+[HTTP 201]
+
+### pedido sem cupom
+{"numero":"VZ-359624","criadoEm":"2026-10-06T21:38:40.035Z","cliente":{"nome":"Maria Silva","email":"maria@exemplo.com","cep":"01310100"},"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":1,"total":100}],"subtotal":100,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":100,"total":119.9,"cupom":null}
+[HTTP 201]
+
+### pedido cupom invalido
+{"erro":{"codigo":"CUPOM_INVALIDO","mensagem":"Cupom inválido.","campo":"cupom"}}
+[HTTP 422]
+
+### pedido cupom expirado
+{"erro":{"codigo":"CUPOM_EXPIRADO","mensagem":"Cupom expirado.","campo":"cupom"}}
+[HTTP 422]
+
+### pedido qtd 6
+{"numero":"VZ-223010","criadoEm":"2026-10-06T21:38:40.493Z","cliente":{"nome":"Maria Silva","email":"maria@exemplo.com","cep":"01310100"},"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":6,"total":600}],"subtotal":600,"desconto":0,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":600,"cupom":null}
+[HTTP 201]
+
+### pedido 200 exato
+{"numero":"VZ-844851","criadoEm":"2026-10-06T21:38:40.637Z","cliente":{"nome":"Maria Silva","email":"maria@exemplo.com","cep":"01310100"},"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":2,"total":200}],"subtotal":200,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":0,"total":219.9,"cupom":null}
+[HTTP 201]
+
+### pedido sem cliente
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.nome","mensagem":"Informe o nome completo."},{"campo":"cliente.email","mensagem":"Informe o e-mail."},{"campo":"cliente.cep","mensagem":"Informe o CEP."}]}}
+[HTTP 422]
+
+### nome sem sobrenome
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.nome","mensagem":"Informe nome e sobrenome."}]}}
+[HTTP 422]
+
+### nome vazio
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.nome","mensagem":"Informe o nome completo."}]}}
+[HTTP 422]
+
+### nome espacos
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.nome","mensagem":"Informe o nome completo."}]}}
+[HTTP 422]
+
+### nome 'A B'
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.nome","mensagem":"Informe nome e sobrenome."}]}}
+[HTTP 422]
+
+### nome '1 2'
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.nome","mensagem":"Informe nome e sobrenome."}]}}
+[HTTP 422]
+
+### nome com espaco duplo
+{"numero":"VZ-987998","criadoEm":"2026-10-06T21:38:41.649Z","cliente":{"nome":"Maria   Silva","email":"m@e.com","cep":"01310100"},"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":1,"total":100}],"subtotal":100,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":100,"total":119.9,"cupom":null}
+[HTTP 201]
+
+### email sem @
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.email","mensagem":"Informe um e-mail válido."}]}}
+[HTTP 422]
+
+### email sem dominio
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.email","mensagem":"Informe um e-mail válido."}]}}
+[HTTP 422]
+
+### email a@b
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.email","mensagem":"Informe um e-mail válido."}]}}
+[HTTP 422]
+
+### email com espaco
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.email","mensagem":"Informe um e-mail válido."}]}}
+[HTTP 422]
+
+### email 2 @
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.email","mensagem":"Informe um e-mail válido."}]}}
+[HTTP 422]
+
+### email ponto final
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.email","mensagem":"Informe um e-mail válido."}]}}
+[HTTP 422]
+
+### cep 7 digitos
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.cep","mensagem":"Informe um CEP com 8 dígitos."}]}}
+[HTTP 422]
+
+### cep 9 digitos
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.cep","mensagem":"Informe um CEP com 8 dígitos."}]}}
+[HTTP 422]
+
+### cep letras
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.cep","mensagem":"Informe um CEP com 8 dígitos."}]}}
+[HTTP 422]
+
+### cep hifen errado
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.cep","mensagem":"Informe um CEP com 8 dígitos."}]}}
+[HTTP 422]
+
+### cep numero
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.cep","mensagem":"Informe o CEP."}]}}
+[HTTP 422]
+
+### cep vazio
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.cep","mensagem":"Informe o CEP."}]}}
+[HTTP 422]
+
+### todos campos invalidos
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.nome","mensagem":"Informe o nome completo."},{"campo":"cliente.email","mensagem":"Informe o e-mail."},{"campo":"cliente.cep","mensagem":"Informe o CEP."}]}}
+[HTTP 422]
+
+### cliente string
+{"erro":{"codigo":"DADOS_INVALIDOS","mensagem":"Existem campos inválidos no pedido.","campos":[{"campo":"cliente.nome","mensagem":"Informe o nome completo."},{"campo":"cliente.email","mensagem":"Informe o e-mail."},{"campo":"cliente.cep","mensagem":"Informe o CEP."}]}}
+[HTTP 422]
+
+### pedido itens vazio
+{"erro":{"codigo":"ITENS_OBRIGATORIOS","mensagem":"Informe ao menos um item.","campo":"itens"}}
+[HTTP 422]
+
+### pedido dup
+{"erro":{"codigo":"ITEM_DUPLICADO","mensagem":"O produto P005 aparece mais de uma vez.","campo":"itens[1].produtoId"}}
+[HTTP 422]
+
+### pedido GET
+{"erro":{"codigo":"METODO_NAO_PERMITIDO","mensagem":"O método GET não é permitido nesta rota."}}
+[HTTP 405]
+
+### pedido json invalido
+{"erro":{"codigo":"JSON_INVALIDO","mensagem":"O corpo da requisição deve ser um objeto JSON válido."}}
+[HTTP 400]
+
+### pedido numero formato (3x)
+{"numero":"VZ-821237","criadoEm":"2026-10-06T21:38:44.452Z","cliente":{"nome":"Maria Silva","email":"maria@exemplo.com","cep":"01310100"},"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":1,"total":100}],"subtotal":100,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":100,"total":119.9,"cupom":null}
+[HTTP 201]
+
+### pedido numero formato
+{"numero":"VZ-342884","criadoEm":"2026-10-06T21:38:44.603Z","cliente":{"nome":"Maria Silva","email":"maria@exemplo.com","cep":"01310100"},"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":1,"total":100}],"subtotal":100,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":100,"total":119.9,"cupom":null}
+[HTTP 201]
+
+### OPTIONS
+HTTP/2 204 
+date: Tue, 06 Oct 2026 21:38:44 GMT
+content-type: application/json; charset=utf-8
+access-control-allow-origin: *
+access-control-allow-headers: content-type
+access-control-allow-methods: GET, POST, OPTIONS
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=MEeUfKeDS1mC02mTCkoCpTn9pQwkpEttpEVlvpT9Y%2FiI66z%2FoBjs%2BrkQqpLoiAihVlEMgPuBPg5ZEyUxBRltULn1W%2BmzMRzpV1LIPopXozhAnCuyFvMB8FNq8WPzgc6SmHM%2By%2F6RgQkeXbc9GoKA2xrtDQHQZbc7ZBc%2FMnFSVCIeAsJPSaR9HMgTKuA%3D"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+server: cloudflare
+cf-ray: a467d095c8c5528a-GIG
+alt-svc: h3=":443"; ma=86400
+
+
+[HTTP 204]
+

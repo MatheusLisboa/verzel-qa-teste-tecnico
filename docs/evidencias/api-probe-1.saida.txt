@@ -1,0 +1,176 @@
+### produtos
+[{"id":"P001","nome":"Camiseta Essencial","descricao":"Algodão penteado e corte reto.","categoria":"Vestuário","preco":59.9},{"id":"P002","nome":"Calça Jeans Slim","descricao":"Jeans com elastano e lavagem escura.","categoria":"Vestuário","preco":139.9},{"id":"P003","nome":"Tênis Casual Urbano","descricao":"Solado de borracha e cabedal em lona.","categoria":"Calçados","preco":189.9},{"id":"P004","nome":"Boné Aba Curva","descricao":"Ajuste traseiro com fivela metálica.","categoria":"Acessórios","preco":49.9},{"id":"P005","nome":"Mochila Urbana 20L","descricao":"Compartimento acolchoado para notebook.","categoria":"Acessórios","preco":100},{"id":"P006","nome":"Kit 3 Pares de Meias","descricao":"Cano médio, algodão com reforço no calcanhar.","categoria":"Vestuário","preco":29.9},{"id":"P007","nome":"Jaqueta Corta-Vento","descricao":"Tecido leve e repelente à água.","categoria":"Vestuário","preco":229.9},{"id":"P008","nome":"Garrafa Térmica 750ml","descricao":"Mantém a temperatura por até 12 horas.","categoria":"Acessórios","preco":50}]
+[HTTP 200]
+
+### produto P001
+{"id":"P001","nome":"Camiseta Essencial","descricao":"Algodão penteado e corte reto.","categoria":"Vestuário","preco":59.9}
+[HTTP 200]
+
+### produto inexistente
+{"erro":{"codigo":"PRODUTO_NAO_ENCONTRADO","mensagem":"Produto P999 não encontrado."}}
+[HTTP 404]
+
+### produto minusculo
+{"erro":{"codigo":"PRODUTO_NAO_ENCONTRADO","mensagem":"Produto p001 não encontrado."}}
+[HTTP 404]
+
+### rota inexistente
+{"erro":{"codigo":"ROTA_NAO_ENCONTRADA","mensagem":"Rota não encontrada."}}
+[HTTP 404]
+
+### POST produtos
+{"erro":{"codigo":"METODO_NAO_PERMITIDO","mensagem":"O método POST não é permitido nesta rota."}}
+[HTTP 405]
+
+### GET calcular
+{"erro":{"codigo":"METODO_NAO_PERMITIDO","mensagem":"O método GET não é permitido nesta rota."}}
+[HTTP 405]
+
+### ok BEMVINDO10 239.70
+{"itens":[{"produtoId":"P002","nome":"Calça Jeans Slim","precoUnitario":139.9,"quantidade":1,"total":139.9},{"produtoId":"P004","nome":"Boné Aba Curva","precoUnitario":49.9,"quantidade":2,"total":99.8}],"subtotal":239.7,"desconto":23.97,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":215.73,"cupom":{"codigo":"BEMVINDO10","aplicado":true,"mensagem":"Cupom aplicado: 10% de desconto nos produtos."}}
+[HTTP 200]
+
+### limite 200 exato (P005x2)
+{"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":2,"total":200}],"subtotal":200,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":0,"total":219.9,"cupom":null}
+[HTTP 200]
+
+### 199.99? P008x4=200
+{"itens":[{"produtoId":"P008","nome":"Garrafa Térmica 750ml","precoUnitario":50,"quantidade":4,"total":200}],"subtotal":200,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":0,"total":219.9,"cupom":null}
+[HTTP 200]
+
+### 199.80 P004x4 (49.9*4)
+{"itens":[{"produtoId":"P004","nome":"Boné Aba Curva","precoUnitario":49.9,"quantidade":4,"total":199.6}],"subtotal":199.6,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":0.4,"total":219.5,"cupom":null}
+[HTTP 200]
+
+### 199.90 P003+P008? 189.9+... P006x?
+{"itens":[{"produtoId":"P003","nome":"Tênis Casual Urbano","precoUnitario":189.9,"quantidade":1,"total":189.9},{"produtoId":"P006","nome":"Kit 3 Pares de Meias","precoUnitario":29.9,"quantidade":1,"total":29.9}],"subtotal":219.8,"desconto":0,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":219.8,"cupom":null}
+[HTTP 200]
+
+### 200 exato com cupom (P005x2 + BEMVINDO10)
+{"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":2,"total":200}],"subtotal":200,"desconto":20,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":0,"total":199.9,"cupom":{"codigo":"BEMVINDO10","aplicado":true,"mensagem":"Cupom aplicado: 10% de desconto nos produtos."}}
+[HTTP 200]
+
+### cupom minusculo+espacos
+{"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":1,"total":100}],"subtotal":100,"desconto":10,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":100,"total":109.9,"cupom":{"codigo":"BEMVINDO10","aplicado":true,"mensagem":"Cupom aplicado: 10% de desconto nos produtos."}}
+[HTTP 200]
+
+### cupom inexistente
+{"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":1,"total":100}],"subtotal":100,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":100,"total":119.9,"cupom":{"codigo":"XPTO","aplicado":false,"mensagem":"Cupom inválido."}}
+[HTTP 200]
+
+### cupom expirado
+{"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":1,"total":100}],"subtotal":100,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":100,"total":119.9,"cupom":{"codigo":"VERAO2026","aplicado":false,"mensagem":"Cupom expirado."}}
+[HTTP 200]
+
+### cupom expirado minusculo
+{"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":1,"total":100}],"subtotal":100,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":100,"total":119.9,"cupom":{"codigo":"VERAO2026","aplicado":false,"mensagem":"Cupom expirado."}}
+[HTTP 200]
+
+### cupom vazio
+{"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":1,"total":100}],"subtotal":100,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":100,"total":119.9,"cupom":null}
+[HTTP 200]
+
+### cupom so espacos
+{"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":1,"total":100}],"subtotal":100,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":100,"total":119.9,"cupom":{"codigo":"","aplicado":false,"mensagem":"Cupom inválido."}}
+[HTTP 200]
+
+### cupom null
+{"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":1,"total":100}],"subtotal":100,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":100,"total":119.9,"cupom":null}
+[HTTP 200]
+
+### cupom numero
+{"itens":[{"produtoId":"P005","nome":"Mochila Urbana 20L","precoUnitario":100,"quantidade":1,"total":100}],"subtotal":100,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":100,"total":119.9,"cupom":{"codigo":"123","aplicado":false,"mensagem":"Cupom inválido."}}
+[HTTP 200]
+
+### qtd 5
+{"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":5,"total":299.5}],"subtotal":299.5,"desconto":0,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":299.5,"cupom":null}
+[HTTP 200]
+
+### qtd 6
+{"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":6,"total":359.4}],"subtotal":359.4,"desconto":0,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":359.4,"cupom":null}
+[HTTP 200]
+
+### qtd 0
+{"erro":{"codigo":"QUANTIDADE_INVALIDA","mensagem":"A quantidade deve ser um número inteiro maior ou igual a 1.","campo":"itens[0].quantidade"}}
+[HTTP 422]
+
+### qtd -1
+{"erro":{"codigo":"QUANTIDADE_INVALIDA","mensagem":"A quantidade deve ser um número inteiro maior ou igual a 1.","campo":"itens[0].quantidade"}}
+[HTTP 422]
+
+### qtd 1.5
+{"erro":{"codigo":"QUANTIDADE_INVALIDA","mensagem":"A quantidade deve ser um número inteiro maior ou igual a 1.","campo":"itens[0].quantidade"}}
+[HTTP 422]
+
+### qtd string
+{"erro":{"codigo":"QUANTIDADE_INVALIDA","mensagem":"A quantidade deve ser um número inteiro maior ou igual a 1.","campo":"itens[0].quantidade"}}
+[HTTP 422]
+
+### qtd null
+{"erro":{"codigo":"QUANTIDADE_INVALIDA","mensagem":"A quantidade deve ser um número inteiro maior ou igual a 1.","campo":"itens[0].quantidade"}}
+[HTTP 422]
+
+### qtd ausente
+{"erro":{"codigo":"QUANTIDADE_INVALIDA","mensagem":"A quantidade deve ser um número inteiro maior ou igual a 1.","campo":"itens[0].quantidade"}}
+[HTTP 422]
+
+### qtd 1e0
+{"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":1,"total":59.9}],"subtotal":59.9,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":140.1,"total":79.8,"cupom":null}
+[HTTP 200]
+
+### qtd 99999999999
+{"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":99999999999,"total":5989999999940.1}],"subtotal":5989999999940.1,"desconto":0,"frete":0,"freteGratis":true,"valorFaltanteFreteGratis":0,"total":5989999999940.1,"cupom":null}
+[HTTP 200]
+
+### itens vazio
+{"erro":{"codigo":"ITENS_OBRIGATORIOS","mensagem":"Informe ao menos um item.","campo":"itens"}}
+[HTTP 422]
+
+### itens ausente
+{"erro":{"codigo":"ITENS_OBRIGATORIOS","mensagem":"Informe ao menos um item.","campo":"itens"}}
+[HTTP 422]
+
+### itens nao array
+{"erro":{"codigo":"ITENS_OBRIGATORIOS","mensagem":"Informe ao menos um item.","campo":"itens"}}
+[HTTP 422]
+
+### item nao objeto
+{"erro":{"codigo":"ITEM_INVALIDO","mensagem":"Cada item deve ser um objeto com produtoId e quantidade.","campo":"itens[0]"}}
+[HTTP 422]
+
+### item null
+{"erro":{"codigo":"ITEM_INVALIDO","mensagem":"Cada item deve ser um objeto com produtoId e quantidade.","campo":"itens[0]"}}
+[HTTP 422]
+
+### produto inexistente
+{"erro":{"codigo":"PRODUTO_NAO_ENCONTRADO","mensagem":"Produto P999 não encontrado.","campo":"itens[0].produtoId"}}
+[HTTP 422]
+
+### produto minusculo
+{"erro":{"codigo":"PRODUTO_NAO_ENCONTRADO","mensagem":"Produto p001 não encontrado.","campo":"itens[0].produtoId"}}
+[HTTP 422]
+
+### duplicado
+{"erro":{"codigo":"ITEM_DUPLICADO","mensagem":"O produto P001 aparece mais de uma vez.","campo":"itens[1].produtoId"}}
+[HTTP 422]
+
+### json invalido
+{"erro":{"codigo":"JSON_INVALIDO","mensagem":"O corpo da requisição deve ser um objeto JSON válido."}}
+[HTTP 400]
+
+### json array
+{"erro":{"codigo":"JSON_INVALIDO","mensagem":"O corpo da requisição deve ser um objeto JSON válido."}}
+[HTTP 400]
+
+### json null
+{"erro":{"codigo":"JSON_INVALIDO","mensagem":"O corpo da requisição deve ser um objeto JSON válido."}}
+[HTTP 400]
+
+### corpo vazio
+{"erro":{"codigo":"JSON_INVALIDO","mensagem":"O corpo da requisição deve ser um objeto JSON válido."}}
+[HTTP 400]
+
+### sem content-type
+{"itens":[{"produtoId":"P001","nome":"Camiseta Essencial","precoUnitario":59.9,"quantidade":1,"total":59.9}],"subtotal":59.9,"desconto":0,"frete":19.9,"freteGratis":false,"valorFaltanteFreteGratis":140.1,"total":79.8,"cupom":null}
+[HTTP 200]
+

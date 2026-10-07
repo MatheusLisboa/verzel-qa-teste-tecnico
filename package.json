@@ -1,0 +1,15 @@
+{
+  "name": "verzel-store-qa",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Teste técnico QA Júnior - Verzel: validação do card VZS-142 (cupom de desconto e frete grátis)",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --project=ui",
+    "test:api": "playwright test --project=api",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.50.0"
+  }
+}

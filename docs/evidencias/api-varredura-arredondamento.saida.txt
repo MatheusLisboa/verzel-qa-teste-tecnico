@@ -1,0 +1,5 @@
+DIVERGE [{"produtoId":"P005","quantidade":2}] undefined frete obtido 19.9 esperado 0
+DIVERGE [{"produtoId":"P005","quantidade":2}] BEMVINDO10 frete obtido 19.9 esperado 0
+DIVERGE [{"produtoId":"P008","quantidade":4}] undefined frete obtido 19.9 esperado 0
+DIVERGE [{"produtoId":"P008","quantidade":4}] BEMVINDO10 frete obtido 19.9 esperado 0
+304 calculos, 4 divergencias

@@ -1,0 +1,36 @@
+E01 title Produtos | Verzel Store | produtos: 8
+E01 precos R$ 59,90 | R$ 139,90 | R$ 189,90 | R$ 49,90 | R$ 100,00 | R$ 29,90 | R$ 229,90 | R$ 50,00
+E02 camiseta x1 {"subtotal":"R$ 59,90","desconto":"R$ 0,00","frete":"R$ 19,90","total":"R$ 79,80","aviso":"Faltam R$ 140,10 para o frete grátis.","contador":"1"}
+E03a vazio Informe um cupom. || <n/a> || {"subtotal":"R$ 59,90","desconto":"R$ 0,00","frete":"R$ 19,90","total":"R$ 79,80","aviso":"Faltam R$ 140,10 para o frete grátis.","contador":"1"}
+E03b inexistente Cupom inválido. || <n/a> || {"subtotal":"R$ 59,90","desconto":"R$ 0,00","frete":"R$ 19,90","total":"R$ 79,80","aviso":"Faltam R$ 140,10 para o frete grátis.","contador":"1"}
+E03c expirado Cupom inválido. || <n/a> || {"subtotal":"R$ 59,90","desconto":"R$ 0,00","frete":"R$ 19,90","total":"R$ 79,80","aviso":"Faltam R$ 140,10 para o frete grátis.","contador":"1"}
+E03d minusc+espacos <n/a> || Cupom BEMVINDO10 aplicado. Remover cupom || {"subtotal":"R$ 59,90","desconto":"- R$ 5,99","frete":"R$ 19,90","total":"R$ 73,81","aviso":"Faltam R$ 140,10 para o frete grátis.","contador":"1"}
+E03e form de cupom visivel com cupom aplicado? 0
+E03f removido {"subtotal":"R$ 59,90","desconto":"R$ 0,00","frete":"R$ 19,90","total":"R$ 79,80","aviso":"Faltam R$ 140,10 para o frete grátis.","contador":"1"}
+E03g troca de cupom (VERAO apos BEMVINDO) <n/a> || Cupom BEMVINDO10 aplicado. Remover cupom || {"subtotal":"R$ 59,90","desconto":"- R$ 5,99","frete":"R$ 19,90","total":"R$ 73,81","aviso":"Faltam R$ 140,10 para o frete grátis.","contador":"1"}
+E03h cupom 10%/arredondamento 59.90 <n/a> || Cupom BEMVINDO10 aplicado. Remover cupom || {"subtotal":"R$ 59,90","desconto":"- R$ 5,99","frete":"R$ 19,90","total":"R$ 73,81","aviso":"Faltam R$ 140,10 para o frete grátis.","contador":"1"}
+E04 qtd2 com cupom {"subtotal":"R$ 119,80","desconto":"- R$ 11,98","frete":"R$ 19,90","total":"R$ 127,72","aviso":"Faltam R$ 80,20 para o frete grátis.","contador":"2"}
+E04 qtd4 {"subtotal":"R$ 239,60","desconto":"- R$ 23,96","frete":"Grátis","total":"R$ 215,64","aviso":"<n/a>","contador":"4"}
+E04 qtd5 {"subtotal":"R$ 299,50","desconto":"- R$ 29,95","frete":"Grátis","total":"R$ 269,55","aviso":"<n/a>","contador":"5"} | limite msg: Limite de 5 unidades por produto. | + disabled: true
+E04 volta qtd4 {"subtotal":"R$ 239,60","desconto":"- R$ 23,96","frete":"Grátis","total":"R$ 215,64","aviso":"<n/a>","contador":"4"}
+E05 vazio h1 Seu carrinho está vazio
+E05 novo item apos esvaziar (cupom persiste?) Cupom BEMVINDO10 aplicado. Remover cupom || {"subtotal":"R$ 49,90","desconto":"- R$ 4,99","frete":"R$ 19,90","total":"R$ 64,81","aviso":"Faltam R$ 150,10 para o frete grátis.","contador":"1"}
+E05b apos Esvaziar carrinho (cupom?) <n/a> || {"subtotal":"R$ 49,90","desconto":"R$ 0,00","frete":"R$ 19,90","total":"R$ 69,80","aviso":"Faltam R$ 150,10 para o frete grátis.","contador":"1"}
+E06 subtotal 200,00 exato {"subtotal":"R$ 200,00","desconto":"R$ 0,00","frete":"R$ 19,90","total":"R$ 219,90","aviso":"Faltam R$ 0,00 para o frete grátis.","contador":"2"}
+E06 cupom em 200 <n/a> || Cupom BEMVINDO10 aplicado. Remover cupom || {"subtotal":"R$ 200,00","desconto":"- R$ 20,00","frete":"R$ 19,90","total":"R$ 199,90","aviso":"Faltam R$ 0,00 para o frete grátis.","contador":"2"}
+E07 199,80 {"subtotal":"R$ 199,80","desconto":"R$ 0,00","frete":"R$ 19,90","total":"R$ 219,70","aviso":"Faltam R$ 0,20 para o frete grátis.","contador":"2"}
+E07b 229,90+139,90 = {"subtotal":"R$ 369,80","desconto":"R$ 0,00","frete":"Grátis","total":"R$ 369,80","aviso":"<n/a>","contador":"2"}
+E07c cupom CA08 <n/a> || Cupom BEMVINDO10 aplicado. Remover cupom || {"subtotal":"R$ 369,80","desconto":"- R$ 36,98","frete":"Grátis","total":"R$ 332,82","aviso":"<n/a>","contador":"2"}
+E08 url https://verzel-store.qa-test-verzel-store.workers.dev/checkout
+E08b vazio Informe o nome completo. | Informe o e-mail. | Informe o CEP.
+E08c invalidos Informe nome e sobrenome. | Informe um e-mail válido. | Informe um CEP com 8 dígitos.
+E08d ok url https://verzel-store.qa-test-verzel-store.workers.dev/pedido-confirmado | h1 Pedido VZ-493457 | Pedido confirmado Pedido VZ-493457 Obrigado, Maria. Seu pedido foi registrado e o pagamento será feito na entrega. Itens do pedido Subtotal R$ 369,80 Desconto (BEMVINDO10) - R$ 36,98 Frete Grátis Total R$ 332,82 1x Calça Jeans Slim R$ 139,90 1x Jaqueta Corta-Vento R$ 229,90 Continuar comprando
+E08e resumo {"subtotal":"R$ 369,80","desconto":"- R$ 36,98","frete":"Grátis","total":"R$ 332,82","aviso":"<n/a>","contador":"0"}
+E08f reload confirmacao Pedido VZ-493457
+E08g checkout vazio redireciona https://verzel-store.qa-test-verzel-store.workers.dev/carrinho
+E08h carrinho apos pedido Seu carrinho está vazio | contador 0
+E08i 404 Página não encontrada | title Página não encontrada | Verzel Store
+E08j confirmacao direta (sessao ainda tem pedido) Pedido VZ-493457
+E09 reload mantem carrinho? 1
+E09b outra aba/ctx 0
+E10 overflow horizontal mobile: false
